@@ -1,0 +1,84 @@
+# Data Structure Visualizer
+# Simple Python program
+stack = []
+queue = []
+array = []
+def show(title, data):
+    print("\n" + title)
+    print("-" * 30)
+    if len(data) == 0:
+        print("Empty")
+    else:
+        print(" | ".join(str(x) for x in data))
+while True:
+    print("\n===== DATA STRUCTURE VISUALIZER =====")
+    print("1. Stack Push")
+    print("2. Stack Pop")
+    print("3. Queue Enqueue")
+    print("4. Queue Dequeue")
+    print("5. Add to Array")
+    print("6. Display All")
+    print("7. Exit")
+    choice = input("Enter your choice: ")
+    if choice == "1":
+        value = input("Enter value: ")
+        stack.append(value)
+        show("Stack", stack)
+    elif choice == "2":
+        if stack:
+            removed = stack.pop()
+            print("Removed:", removed)
+        else:
+            print("Stack is empty!")
+        show("Stack", stack)
+    elif choice == "3":
+        value = input("Enter value: ")
+        queue.append(value)
+        show("Queue", queue)
+    elif choice == "4":
+        if queue:
+            removed = queue.pop(0)
+            print("Removed:", removed)
+        else:
+            print("Queue is empty!")
+        show("Queue", queue)
+    elif choice == "5":
+        value = input("Enter value: ")
+        array.append(value)
+        show("Array", array)
+    elif choice == "6":
+        show("Stack", stack)
+        show("Queue", queue)
+        show("Array", array)
+    elif choice == "7":
+        print("Program ended.")
+        break
+    else:
+        print("Invalid choice!")
+
+OUTPUT:
+===== DATA STRUCTURE VISUALIZER =====
+1. Stack Push
+2. Stack Pop
+3. Queue Enqueue
+4. Queue Dequeue
+5. Add to Array
+6. Display All
+7. Exit
+Enter your choice: 1
+Enter value: 10
+Stack
+------------------------------
+10
+Enter your choice: 1
+Enter value: 20
+Stack
+------------------------------
+10 | 20
+
+Enter your choice: 2
+Removed: 20
+
+Stack
+------------------------------
+10
